@@ -9,6 +9,16 @@ fn greet(name: &str) -> String {
 
 fn main() {
     tauri::Builder::default()
+        .setup(|app| {
+            // Open devtools on debug builds
+            #[cfg(debug_assertions)]
+            {
+                use tauri::Manager;
+                let window = app.get_window("main").unwrap();
+                window.open_devtools();
+            }
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
