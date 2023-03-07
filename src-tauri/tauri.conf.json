@@ -44,6 +44,20 @@
         "width": 800,
         "height": 600
       }
-    ]
+    ],
+    "cli": {
+      "beforeHelp": "TAURI TEMPLATE CLI",
+      "description": "CLI for tauri_template",
+      "longDescription": "This is the command line interface for tauri_template.",
+      "args": [
+        {
+          "name": "verbose",
+          "short": "v",
+          "description": "Verbose output",
+          "multipleOccurrences": true
+        }
+      ],
+      "subcommands": {}
+    }
   }
 }
