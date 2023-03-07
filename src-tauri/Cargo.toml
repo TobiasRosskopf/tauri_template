@@ -2,9 +2,9 @@
 name = "tauri_template"
 version = "0.0.0"
 description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
+authors = ["Tobias Rosskopf"]
+license = "MIT"
+repository = "https://www.github.com/tobiasrosskopf/tauri_template"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
