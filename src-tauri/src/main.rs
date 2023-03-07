@@ -2,12 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use lib::cli;
-
-/// Greet a user
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
+use lib::commands;
 
 /// Open devtools on debug builds
 fn devtools(app: &tauri::App) {
@@ -22,12 +17,12 @@ fn devtools(app: &tauri::App) {
 fn main() {
     tauri::Builder::default()
         .setup(|app| {
-            cli::cli(app);
-            devtools(app);
+            cli::cli(app);  // Setup command line interface
+            devtools(app);  // Open devtools on debug builds
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
-            greet,
+            commands::greet,    // Greet command
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
