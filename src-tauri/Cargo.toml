@@ -1,6 +1,6 @@
 [package]
 name = "tauri_template"
-version = "0.0.0"
+version = "0.1.0"
 description = "A Tauri App"
 authors = ["Tobias Rosskopf"]
 license = "MIT"
@@ -12,16 +12,17 @@ edition = "2021"
 [lib]
 name = "lib"
 path = "src/lib.rs"
+crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "1.2", features = [] }
+tauri-build = { version = "2.0.0", features = [] }
 
 [dependencies]
-tauri = { version = "1.2", features = ["cli", "shell-open"] }
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
+tauri = { version = "2.0.0", features = [] }
+tauri-plugin-shell = "2.0.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
 
-[features]
-# this feature is used for production builds or when `devPath` points to the filesystem
-# DO NOT REMOVE!!
-custom-protocol = ["tauri/custom-protocol"]
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-cli = "2"
+

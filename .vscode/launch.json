@@ -13,10 +13,13 @@
                     "build",
                     "--manifest-path=./src-tauri/Cargo.toml",
                     "--no-default-features"
-                ]
+                ],
+                "problemMatcher": [
+                    "$rustc"
+                ],
             },
             // task for the `beforeDevCommand` if used, must be configured in `.vscode/tasks.json`
-            "preLaunchTask": "ui:dev"
+            "preLaunchTask": "ui:dev",
         },
         {
             "type": "lldb",
@@ -27,10 +30,24 @@
                     "build",
                     "--release",
                     "--manifest-path=./src-tauri/Cargo.toml"
-                ]
+                ],
+                "problemMatcher": [
+                    "$rustc"
+                ],
             },
             // task for the `beforeBuildCommand` if used, must be configured in `.vscode/tasks.json`
             "preLaunchTask": "ui:build"
-        }
+        },
+        {
+            // this configuration works only on Windows
+            "name": "Tauri Frontend (Windows)",
+            "type": "msedge",
+            "port": 9222,
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/src-tauri/target/debug/tauri_template.exe", // Path to your app in debug mode
+            "useWebView": true,
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "ui:dev&core:buildDebug"
+        },
     ]
 }

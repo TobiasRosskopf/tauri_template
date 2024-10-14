@@ -10,7 +10,6 @@
             // ideally you should also configure a `problemMatcher`
             // see https://code.visualstudio.com/docs/editor/tasks#_can-a-background-task-be-used-as-a-prelaunchtask-in-launchjson
             "isBackground": true,
-            // change this to your `beforeDevCommand`:
             "command": "yarn",
             "args": [
                 "dev"
@@ -19,10 +18,29 @@
         {
             "label": "ui:build",
             "type": "shell",
-            // change this to your `beforeBuildCommand`:
             "command": "yarn",
             "args": [
                 "build"
+            ]
+        },
+        {
+            "label": "core:buildDebug",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build",
+                "--manifest-path=./src-tauri/Cargo.toml",
+                "--no-default-features"
+            ],
+            "problemMatcher": [
+                "$rustc"
+            ],
+        },
+        {
+            "label": "ui:dev&core:buildDebug",
+            "dependsOn": [
+                "core:buildDebug",
+                "ui:dev"
             ]
         }
     ]

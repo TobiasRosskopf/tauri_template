@@ -9,13 +9,15 @@ fn devtools(app: &tauri::App) {
     #[cfg(debug_assertions)]
     {
         use tauri::Manager;
-        let window = app.get_window("main").unwrap();
+        let window = app.get_webview_window("main").unwrap();
         window.open_devtools();
     }
 }
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_cli::init())
+        .plugin(tauri_plugin_shell::init())
         .setup(|app| {
             cli::cli(app);  // Setup command line interface
             devtools(app);  // Open devtools on debug builds

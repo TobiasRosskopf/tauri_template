@@ -1,6 +1,8 @@
+use tauri_plugin_cli::CliExt;
+
 /// Parse command line arguments
 pub fn cli(app: &tauri::App) {
-    match app.get_cli_matches() {
+    match app.cli().matches() {
         // `matches` here is a Struct with { args, subcommand }.
         // `args` is `HashMap<String, ArgData>` where `ArgData` is a struct with { value, occurrences }.
         // `subcommand` is `Option<Box<SubcommandMatches>>` where `SubcommandMatches` is a struct with { name, matches }.
