@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 
+import Adder from "./components/Adder";
+
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
@@ -46,6 +48,8 @@ function App() {
         </form>
       </div>
       <p>{greetMsg}</p>
+
+      <Adder />
     </div>
   );
 }

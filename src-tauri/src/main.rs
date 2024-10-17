@@ -24,7 +24,8 @@ fn main() {
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
-            commands::greet,    // Greet command
+            commands::greet,  // Greet command
+            commands::add,    // Add command
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
