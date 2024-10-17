@@ -20,7 +20,6 @@ pub fn add(state: State<'_, Mutex<AppState>>, num1: i32, num2: i32) -> i32 {
     state.sum
 }
 
-
 // Tests
 #[cfg(test)]
 mod tests {

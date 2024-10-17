@@ -21,14 +21,14 @@ fn main() {
         .plugin(tauri_plugin_cli::init())
         .plugin(tauri_plugin_shell::init())
         .setup(|app| {
-            state::setup(app);  // Setup app state
-            cli::cli(app);      // Setup command line interface
-            devtools(app);      // Open devtools on debug builds
+            state::setup(app); // Setup app state
+            cli::cli(app); // Setup command line interface
+            devtools(app); // Open devtools on debug builds
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
-            commands::greet,  // Greet command
-            commands::add,    // Add command
+            commands::greet, // Greet command
+            commands::add,   // Add command
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

@@ -9,10 +9,7 @@ pub fn cli(app: &tauri::App) {
         Ok(matches) => {
             // Check if the `help` argument was passed
             if matches.args.contains_key("help") {
-                println!(
-                    "{}",
-                    matches.args.get("help").unwrap().value.as_str().unwrap()
-                );
+                println!("{}", matches.args.get("help").unwrap().value.as_str().unwrap());
                 std::process::exit(0);
             }
             // Check if the `version` argument was passed
