@@ -592,7 +592,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tauri-apps/api@npm:>=2.0.2, @tauri-apps/api@npm:^2.0.0":
+"@tauri-apps/api@npm:2.0.2, @tauri-apps/api@npm:^2.0.0":
   version: 2.0.2
   resolution: "@tauri-apps/api@npm:2.0.2"
   checksum: 10c0/6647cc00cf521bcfaf83e4f397b15aca6fd03db27e2afd883ee9e9ea6b14bc3b90c3df0756aaa0636bd9be791799320e44e99a2e83f2865916b0447879d00682
@@ -669,7 +669,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tauri-apps/cli@npm:>=2.0.3":
+"@tauri-apps/cli@npm:2.0.3":
   version: 2.0.3
   resolution: "@tauri-apps/cli@npm:2.0.3"
   dependencies:
@@ -710,7 +710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tauri-apps/plugin-cli@npm:~2":
+"@tauri-apps/plugin-cli@npm:2.0.0":
   version: 2.0.0
   resolution: "@tauri-apps/plugin-cli@npm:2.0.0"
   dependencies:
@@ -719,7 +719,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tauri-apps/plugin-shell@npm:>=2.0.0":
+"@tauri-apps/plugin-shell@npm:2.0.0":
   version: 2.0.0
   resolution: "@tauri-apps/plugin-shell@npm:2.0.0"
   dependencies:
@@ -783,7 +783,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.2.7":
+"@types/react-dom@npm:18.3.1":
   version: 18.3.1
   resolution: "@types/react-dom@npm:18.3.1"
   dependencies:
@@ -792,7 +792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.2.15":
+"@types/react@npm:*, @types/react@npm:18.3.11":
   version: 18.3.11
   resolution: "@types/react@npm:18.3.11"
   dependencies:
@@ -802,7 +802,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-react@npm:^4.2.1":
+"@vitejs/plugin-react@npm:4.3.2":
   version: 4.3.2
   resolution: "@vitejs/plugin-react@npm:4.3.2"
   dependencies:
@@ -933,9 +933,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001663":
-  version: 1.0.30001668
-  resolution: "caniuse-lite@npm:1.0.30001668"
-  checksum: 10c0/247b3200aeec55038f3a11f3e6ab66f656c54d30df7b01d8d447efaba9af96ad3e17128da2ddd42ddc9cb6c286bac65b634a20955b3cc6619be7ca4601fddc8e
+  version: 1.0.30001669
+  resolution: "caniuse-lite@npm:1.0.30001669"
+  checksum: 10c0/f125f23440d3dbb6c25ffb8d55f4ce48af36a84d0932b152b3b74f143a4170cbe92e02b0a9676209c86609bf7bf34119ff10cc2bc7c1b7ea40e936cc16598408
   languageName: node
   linkType: hard
 
@@ -1041,9 +1041,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.28":
-  version: 1.5.36
-  resolution: "electron-to-chromium@npm:1.5.36"
-  checksum: 10c0/cd8d0de7801107f2b2744b5b18641c969a49b0503996cc1a586bb79d893020d0c4e916ac1935603eea65104b4fc1096bc339e0151531dca9e0f0ce0c1882e2d8
+  version: 1.5.40
+  resolution: "electron-to-chromium@npm:1.5.40"
+  checksum: 10c0/3f97360627cf179b344a7d45b3d12fd3f18f1287529d9835a8e802c7a3b99f09e326b4ed3097be1b135e45a33e8497e758b0c101e38e5bb405eaa6aa887eca82
   languageName: node
   linkType: hard
 
@@ -1653,9 +1653,9 @@ __metadata:
   linkType: hard
 
 "picocolors@npm:^1.0.0, picocolors@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "picocolors@npm:1.1.0"
-  checksum: 10c0/86946f6032148801ef09c051c6fb13b5cf942eaf147e30ea79edb91dd32d700934edebe782a1078ff859fb2b816792e97ef4dab03d7f0b804f6b01a0df35e023
+  version: 1.1.1
+  resolution: "picocolors@npm:1.1.1"
+  checksum: 10c0/e2e3e8170ab9d7c7421969adaa7e1b31434f789afb9b3f115f6b96d91945041ac3ceb02e9ec6fe6510ff036bcc0bf91e69a1772edc0b707e12b19c0f2d6bcf58
   languageName: node
   linkType: hard
 
@@ -1687,7 +1687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.3.1":
+"react-dom@npm:18.3.1":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
   dependencies:
@@ -1706,7 +1706,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.3.1":
+"react@npm:18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:
@@ -1960,17 +1960,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tauri_template@workspace:."
   dependencies:
-    "@tauri-apps/api": "npm:>=2.0.2"
-    "@tauri-apps/cli": "npm:>=2.0.3"
-    "@tauri-apps/plugin-cli": "npm:~2"
-    "@tauri-apps/plugin-shell": "npm:>=2.0.0"
-    "@types/react": "npm:^18.2.15"
-    "@types/react-dom": "npm:^18.2.7"
-    "@vitejs/plugin-react": "npm:^4.2.1"
-    react: "npm:^18.3.1"
-    react-dom: "npm:^18.3.1"
-    typescript: "npm:^5.6.3"
-    vite: "npm:^5.3.1"
+    "@tauri-apps/api": "npm:2.0.2"
+    "@tauri-apps/cli": "npm:2.0.3"
+    "@tauri-apps/plugin-cli": "npm:2.0.0"
+    "@tauri-apps/plugin-shell": "npm:2.0.0"
+    "@types/react": "npm:18.3.11"
+    "@types/react-dom": "npm:18.3.1"
+    "@vitejs/plugin-react": "npm:4.3.2"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
+    typescript: "npm:5.6.3"
+    vite: "npm:5.4.9"
   languageName: unknown
   linkType: soft
 
@@ -1981,7 +1981,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.6.3":
+"typescript@npm:5.6.3":
   version: 5.6.3
   resolution: "typescript@npm:5.6.3"
   bin:
@@ -1991,7 +1991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.6.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>":
   version: 5.6.3
   resolution: "typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"
   bin:
@@ -2033,7 +2033,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.3.1":
+"vite@npm:5.4.9":
   version: 5.4.9
   resolution: "vite@npm:5.4.9"
   dependencies:
