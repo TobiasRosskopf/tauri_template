@@ -1,3 +1,9 @@
+use std::sync::Mutex;
+
+use tauri::State;
+
+use super::state::AppState;
+
 /// Greet a user
 #[tauri::command]
 pub fn greet(name: &str) -> String {
@@ -6,8 +12,12 @@ pub fn greet(name: &str) -> String {
 
 /// Add two numbers
 #[tauri::command]
-pub fn add(num1: i32, num2: i32) -> i32 {
-    num1 + num2
+pub fn add(state: State<'_, Mutex<AppState>>, num1: i32, num2: i32) -> i32 {
+    let mut state = state.lock().unwrap();
+    state.num1 = num1;
+    state.num2 = num2;
+    state.sum = state.num1 + state.num2;
+    state.sum
 }
 
 
