@@ -2,8 +2,9 @@ use std::sync::Mutex;
 
 use tauri::{App, Manager};
 
-#[derive(Default)]
+#[derive(Default, Debug, Clone)]
 pub struct AppState {
+    pub ini_file: String,
     pub num1: i32,
     pub num2: i32,
     pub sum: i32,
@@ -11,6 +12,10 @@ pub struct AppState {
 
 pub fn setup(app: &App) {
     app.manage(Mutex::new(AppState::default()));
+}
+
+pub fn get_state(app: &App) -> AppState {
+    app.state::<Mutex<AppState>>().lock().unwrap().clone()
 }
 
 // Tests

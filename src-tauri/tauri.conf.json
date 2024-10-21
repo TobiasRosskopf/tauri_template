@@ -41,9 +41,10 @@
       "longDescription": "This is the command line interface for tauri_template.",
       "args": [
         {
-          "name": "verbose",
-          "short": "v",
-          "description": "Verbose output"
+          "name": "ini",
+          "short": "i",
+          "takesValue": true,
+          "description": "Config file to use (*.ini)"
         }
       ],
       "subcommands": {}

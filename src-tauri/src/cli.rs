@@ -1,7 +1,13 @@
 use tauri_plugin_cli::CliExt;
 
+use crate::state;
+
 /// Parse command line arguments
 pub fn cli(app: &tauri::App) {
+    // Get app state to eventually store command line arguments
+    let mut state = state::get_state(app);
+    
+    println!("Parsing command line arguments");
     match app.cli().matches() {
         // `matches` here is a Struct with { args, subcommand }.
         // `args` is `HashMap<String, ArgData>` where `ArgData` is a struct with { value, occurrences }.
@@ -17,15 +23,20 @@ pub fn cli(app: &tauri::App) {
                 println!("Version: {}", env!("CARGO_PKG_VERSION"));
                 std::process::exit(0);
             }
-            // Check if the `verbose` argument was passed
-            if matches.args.contains_key("verbose") {
-                println!(
-                    "Verbose mode enabled ({} times)!",
-                    matches.args.get("verbose").unwrap().occurrences
-                );
-                // TODO: Enable verbose mode
+            // Check if the `ini` argument was passed
+            if matches.args.contains_key("ini") {
+                state.ini_file = match matches.args.get("ini") {
+                    Some(ini_file) => ini_file.value.as_str().unwrap().to_string(),
+                    None => "".to_string(),
+                };
+            }
+            // Print the app state in debug builds
+            #[cfg(debug_assertions)] {
+                println!("{:#?}", state);
             }
         }
-        Err(_) => {}
-    }
+        Err(err) => {
+            println!("Error parsing command line arguments: {}", err);
+        }
+    };
 }

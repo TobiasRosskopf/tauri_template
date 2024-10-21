@@ -18,6 +18,9 @@
                     "$rustc"
                 ],
             },
+            "args": [
+                "--ini", "test.ini"
+            ],
             // task for the `beforeDevCommand` if used, must be configured in `.vscode/tasks.json`
             "preLaunchTask": "ui:dev",
         },
