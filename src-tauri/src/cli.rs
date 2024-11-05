@@ -1,3 +1,5 @@
+// Help under: https://v2.tauri.app/plugin/cli/
+
 use tauri_plugin_cli::CliExt;
 
 use crate::state;
@@ -6,7 +8,7 @@ use crate::state;
 pub fn cli(app: &tauri::App) {
     // Get app state to eventually store command line arguments
     let mut state = state::get_state(app);
-    
+
     println!("Parsing command line arguments");
     match app.cli().matches() {
         // `matches` here is a Struct with { args, subcommand }.
@@ -31,7 +33,8 @@ pub fn cli(app: &tauri::App) {
                 };
             }
             // Print the app state in debug builds
-            #[cfg(debug_assertions)] {
+            #[cfg(debug_assertions)]
+            {
                 println!("{:#?}", state);
             }
         }
